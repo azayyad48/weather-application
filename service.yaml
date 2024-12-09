@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-service
+spec:
+  type: ClusterIP  # The default type for internal service exposure
+  selector:
+    app: my-app  # This should match the label of the Pod in the Deployment
+  ports:
+    - protocol: TCP
+      port: 80        # Port to expose
+      targetPort: 80   # Port on the container
